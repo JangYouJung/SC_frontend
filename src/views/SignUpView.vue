@@ -39,7 +39,7 @@ async function signUpForm() {
   data.append("nickname", `${name.value}`);
 
   await axios
-    .post("http://34.64.87.72:3300/signup", data, {
+    .post("http://sc_backend_service:8080/api/signup", data, {
       headers: {
         "Content-Type": "application/json",
       },

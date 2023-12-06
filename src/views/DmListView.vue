@@ -37,14 +37,16 @@ const nameList = ref([{}]);
 const router = useRouter();
 function getDmList() {
   userData.instance
-    .get("http://34.64.87.72:3300/chat/dm", {
+    .get("http://sc_backend_service:8080/api/chat/dm", {
       params: { user_id: userData.user_id },
     })
     .then(function (res) {
       list.value = res.data;
       list.value.forEach((ele) => {
         userData.instance
-          .get("http://34.64.87.72:3300/chat/getName", { params: { id: ele } })
+          .get("http://sc_backend_service:8080/api/chat/getName", {
+            params: { id: ele },
+          })
           .then((response: { data: { user_name: string } }) => {
             nameList.value.push({ name: response.data.user_name, id: ele });
           });

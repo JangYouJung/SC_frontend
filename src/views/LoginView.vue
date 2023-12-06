@@ -31,7 +31,7 @@ function loginForm() {
   data.append("email", `${useremail.value}`);
   data.append("pwd", `${pwd.value}`);
   axios
-    .post("http://34.64.87.72:3300/login/enter", data, {
+    .post("http://sc_backend_service:8080/api/login/enter", data, {
       headers: {
         "Content-Type": "application/json",
       },

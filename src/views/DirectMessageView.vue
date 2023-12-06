@@ -96,7 +96,7 @@ function goBack() {
 function getBeforeData() {
   const partner_id = route.params.receiver_id;
   userData.instance
-    .get("http://34.64.87.72:3300/chat/getBeforeDm", {
+    .get("http://sc_backend_service:8080/api/chat/getBeforeDm", {
       params: { user_id: userData.user_id, partner_id: partner_id },
     })
     .then((res) => {

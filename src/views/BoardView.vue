@@ -52,7 +52,7 @@ const data = ref();
 
 function getPostings() {
   userData.instance
-    .get(`http://34.64.87.72:3300/board`, {
+    .get(`http://sc_backend_service:8080/api/board`, {
       params: { id: route.params.id },
     })
     .then(function (res) {
@@ -66,7 +66,7 @@ function getPostings() {
 function deletePost() {
   if (data.value[0].post_writer == userData.user_id) {
     userData.instance
-      .delete(`http://34.64.87.72:3300/board`, {
+      .delete(`http://sc_backend_service:8080/api/board`, {
         params: { id: route.params.id },
       })
       .then(() => {
