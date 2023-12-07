@@ -8,12 +8,21 @@ module.exports = defineConfig({
   devServer: {
     client: {
       webSocketURL: {
-        hostname: "sc_backend_service",
-        pathname: "/api",
+        hostname: "sc-chatting.com",
+        pathname: "/ws",
         port: 8080,
-        protocol: "http",  
+        protocol: "ws",  
       },
     },
   },
   productionSourceMap: false,
 });
+
+/* 기존 코드
+client: {
+      webSocketURL: {
+        hostname: "localhost",
+        pathname: "/ws",
+        port: 8080,
+        protocol: "ws",
+*/
