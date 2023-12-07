@@ -6,11 +6,12 @@ module.exports = defineConfig({
     devtool: false,
   },
   devServer: {
-    proxy: {
-      "/ws": {
-        target: "http://sc-backend-service:8080", // 백엔드 서비스의 클러스터 내부 DNS 이름과 포트
-        ws: true,
-        changeOrigin: true,
+    client: {
+      webSocketURL: {
+        hostname: "sc_backend_service",
+        pathname: "/api",
+        port: 8080,
+        protocol: "http",  
       },
     },
   },
