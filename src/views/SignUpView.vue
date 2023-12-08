@@ -48,7 +48,9 @@ async function signUpForm() {
       inject_alert("회원가입에 성공하셨습니다!");
       router.push("/login");
     })
-    .catch(function () {
+    .catch((error) => {
+      console.log("Error " + error.response.status);
+      console.log("Log " + error);
       inject_alert("회원가입 실패");
     });
 }
