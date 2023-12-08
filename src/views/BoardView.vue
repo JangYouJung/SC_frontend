@@ -52,7 +52,7 @@ const data = ref();
 
 function getPostings() {
   userData.instance
-    .get(`http://sc-backend-service:8080/api/board`, {
+    .get(`http://sc-chatting.com/api/board`, {
       params: { id: route.params.id },
     })
     .then(function (res) {
@@ -66,7 +66,7 @@ function getPostings() {
 function deletePost() {
   if (data.value[0].post_writer == userData.user_id) {
     userData.instance
-      .delete(`http://sc-backend-service:8080/api/board`, {
+      .delete(`http://sc-chatting.com/api/board`, {
         params: { id: route.params.id },
       })
       .then(() => {

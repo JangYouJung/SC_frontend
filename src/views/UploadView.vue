@@ -55,7 +55,7 @@ console.log(type.value);
 function sendPost() {
   if (route.query.type == "free") {
     userData.instance
-      .post("http://sc-backend-service:8080/api/board/free/upload", {
+      .post("http://sc-chatting.com/api/board/free/upload", {
         p_title: title.value,
         p_content: content.value,
         p_writer: userData.user_id,
@@ -73,7 +73,7 @@ function sendPost() {
       });
   } else {
     userData.instance
-      .post("http://sc-backend-service:8080/api/board/info/upload", {
+      .post("http://sc-chatting.com/api/board/info/upload", {
         p_title: title.value,
         p_content: content.value,
         p_writer: userData.user_id,

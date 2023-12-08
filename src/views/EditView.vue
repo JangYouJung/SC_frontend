@@ -52,7 +52,7 @@ function goMenu() {
 getPost();
 function getPost() {
   userData.instance
-    .get(`http://sc-backend-service:8080/api/board`, {
+    .get(`http://sc-chatting.com/api/board`, {
       params: { id: route.params.id },
     })
     .then(function (res) {
@@ -67,7 +67,7 @@ function getPost() {
 
 function sendPost() {
   userData.instance
-    .post("http://sc-backend-service:8080/api/board/edit", {
+    .post("http://sc-chatting.com/api/board/edit", {
       p_id: route.params.id,
       p_title: title.value,
       p_content: content.value,
