@@ -75,7 +75,7 @@ function goBack() {
 
 function getBeforeData() {
   userData.instance
-    .get("http://sc_backend_service:8080/api/chat/getMessages")
+    .get("http://sc-backend-service:8080/api/chat/getMessages")
     .then((res) => {
       res.data.forEach((element: object) => {
         inputMessage.value.push({

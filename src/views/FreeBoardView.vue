@@ -45,7 +45,7 @@ const list = ref([]);
 const router = useRouter();
 function getPostings() {
   userData.instance
-    .get("http://sc_backend_service:8080/api/board/list")
+    .get("http://sc-backend-service:8080/api/board/list")
     .then(function (res) {
       res.data.forEach((element: any) => {
         if (element.post_type == "free") list.value.push(element);

@@ -29,7 +29,7 @@ async function loginCheck() {
 
 // socket 서버에 연결
 function socketConnect() {
-  const s_client = io(`http://sc_backend_service:8080/api`).connect();
+  const s_client = io(`http://sc-backend-service:8080/api`).connect();
   userData.socket = s_client;
 }
 
