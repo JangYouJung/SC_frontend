@@ -29,7 +29,11 @@ async function loginCheck() {
 
 // socket 서버에 연결
 function socketConnect() {
+<<<<<<< Updated upstream
   const s_client = io(`http://sc-backend-service:5000`).connect();
+=======
+  const s_client = io(`http://sc-chatting.com:5000`).connect();
+>>>>>>> Stashed changes
   userData.socket = s_client;
 }
 
