@@ -29,14 +29,7 @@ async function loginCheck() {
 
 // socket 서버에 연결
 function socketConnect() {
-  const s_client = io('http://sc-chatting.com:5000',{
-    path: '/socket.io', // 서버 path와 일치시켜준다
-    transports: ['websocket']
-  }).connect();
-  
-  /*
-  const s_client = io(`http://sc-chatting.com:5000`).connect();
-  */
+  const s_client = io(`http://sc-chatting.com/api`).connect();
   userData.socket = s_client;
 }
 
