@@ -10,7 +10,7 @@ module.exports = defineConfig({
       webSocketURL: {
         hostname: "sc-chatting.com",
         pathname: "/ws",
-        port: 80,
+        port: 5000,
         protocol: "ws",
       },
     },
