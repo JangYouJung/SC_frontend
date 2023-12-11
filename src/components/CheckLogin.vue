@@ -27,21 +27,6 @@ async function loginCheck() {
   }
 }
 
-/*
-// socket 서버에 연결
-function socketConnect() {
-  const s_client = io('http://sc-chatting.com:5000',{
-    path: '/socket.io', // 서버 path와 일치시켜준다
-    //transports: ['websocket']
-  }).connect();
-  
-  
-  //const s_client = io(`http://sc-chatting.com:5000`).connect();
-  
-  userData.socket = s_client;
-}
-*/
-
 // socket 서버에 연결
 function socketConnect() {
   const s_client = io('http://sc-chatting.com', {
@@ -76,6 +61,7 @@ function socketConnect() {
 onMounted(async () => {
   const is_login = await loginCheck();
   if (is_login == true) {
+    console.log("onMounted");
     await socketConnect();
   } else {
     console.log("loginCheck 실패");
