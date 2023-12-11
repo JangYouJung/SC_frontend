@@ -1,13 +1,13 @@
 <template>
   <div class="board">
     <hr />
-    <h1 v-if="data[0].post_type == 'free'" class="boardTitle">자유게시판</h1>
-    <h1 v-else-if="data[0].post_type == 'info'" class="boardTitle">
+    <h1 v-if="data && data[0] && data[0].post_type == 'free'" class="boardTitle">자유게시판</h1>
+    <h1 v-else-if="data && data[0] && data[0].post_type == 'info'" class="boardTitle">
       정보게시판
     </h1>
     <hr />
     <br />
-    <div class="contents">
+    <div class="contents" v-if="data && data[0]">
       <div class="title">제목 : {{ data[0].post_title }}</div>
       <div class="writer">글쓴이 : {{ data[0].post_name }}</div>
       <div class="date">작성일 : {{ data[0].post_create }}</div>
@@ -20,10 +20,7 @@
       </div>
     </div>
     <hr style="border: 1px" />
-    <button
-      v-if="userData.user_id == data[0].post_writer"
-      @click="goEdit(data[0].post_id)"
-    >
+    <button v-if="userData.user_id == data[0]?.post_writer" @click="goEdit(data[0]?.post_id)">
       수정하기
     </button>
     <button @click="goMenu">메뉴</button>
@@ -64,7 +61,7 @@ function getPostings() {
 }
 
 function deletePost() {
-  if (data.value[0].post_writer == userData.user_id) {
+  if (data.value && data.value[0] && data.value[0].post_writer == userData.user_id) {
     userData.instance
       .delete(`http://sc-chatting.ddns.net/api/board`, {
         params: { id: route.params.id },
