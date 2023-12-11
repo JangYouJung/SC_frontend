@@ -29,15 +29,19 @@ async function loginCheck() {
 
 // socket 서버에 연결
 function socketConnect() {
-  const s_client = io(
-    `http://sc-backend-service.default.svc.cluster.local`
-  ).connect();
+  const s_client = io(`http://sc-backend-service:5000`).connect();
+
+  s_client.on("connect_error", (error) => {
+    console.error("===========Socket connection failed:", error);
+  });
+
   userData.socket = s_client;
 }
 
 onMounted(async () => {
   const is_login = await loginCheck();
   if (is_login == true) {
+    console.log("onMounted");
     await socketConnect();
   } else {
     console.log("loginCheck 실패");
