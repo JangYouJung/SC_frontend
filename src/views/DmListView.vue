@@ -37,14 +37,14 @@ const nameList = ref([{}]);
 const router = useRouter();
 function getDmList() {
   userData.instance
-    .get("http://sc-chatting.com/api/chat/dm", {
+    .get("http://sc-chatting.ddns.net/api/chat/dm", {
       params: { user_id: userData.user_id },
     })
     .then(function (res) {
       list.value = res.data;
       list.value.forEach((ele) => {
         userData.instance
-          .get("http://sc-chatting.com/api/chat/getName", {
+          .get("http://sc-chatting.ddns.net/api/chat/getName", {
             params: { id: ele },
           })
           .then((response: { data: { user_name: string } }) => {

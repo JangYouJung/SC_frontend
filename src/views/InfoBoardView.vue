@@ -47,7 +47,7 @@ const router = useRouter();
 
 function getPostings() {
   userData.instance
-    .get("http://sc-chatting.com/api/board/list")
+    .get("http://sc-chatting.ddns.net/api/board/list")
     .then(function (res) {
       res.data.forEach((element: any) => {
         if (element.post_type == "info") list.value.push(element);

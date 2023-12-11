@@ -8,7 +8,7 @@ module.exports = defineConfig({
   devServer: {
     client: {
       webSocketURL: {
-        hostname: "sc-chatting.com",
+        hostname: "sc-chatting.ddns.net",
         pathname: "/ws",
         port: 5000,
         protocol: "ws",

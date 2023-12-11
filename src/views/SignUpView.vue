@@ -39,7 +39,7 @@ async function signUpForm() {
   data.append("nickname", `${name.value}`);
 
   await axios
-    .post("http://sc-chatting.com/api/signup", data, {
+    .post("http://sc-chatting.ddns.net/api/signup", data, {
       headers: {
         "Content-Type": "application/json",
       },

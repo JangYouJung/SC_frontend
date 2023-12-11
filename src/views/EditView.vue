@@ -52,7 +52,7 @@ function goMenu() {
 getPost();
 function getPost() {
   userData.instance
-    .get(`http://sc-chatting.com/api/board`, {
+    .get(`http://sc-chatting.ddns.net/api/board`, {
       params: { id: route.params.id },
     })
     .then(function (res) {
@@ -67,7 +67,7 @@ function getPost() {
 
 function sendPost() {
   userData.instance
-    .post("http://sc-chatting.com/api/board/edit", {
+    .post("http://sc-chatting.ddns.net/api/board/edit", {
       p_id: route.params.id,
       p_title: title.value,
       p_content: content.value,
