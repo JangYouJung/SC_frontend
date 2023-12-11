@@ -70,6 +70,7 @@ function socketConnect() {
   s_client.on('error', (error) => {
     console.error('웹소켓 오류:', error);
   });
+}
 
 
 onMounted(async () => {
