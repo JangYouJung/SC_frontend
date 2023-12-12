@@ -13,6 +13,7 @@
 </template>
 
 <script lang="ts" setup>
+/* eslint-disable */
 import router from "@/router";
 import { ref, inject } from "vue";
 

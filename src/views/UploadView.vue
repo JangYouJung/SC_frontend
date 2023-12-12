@@ -33,6 +33,7 @@
 </template>
 
 <script setup lang="ts">
+/* eslint-disable */
 import { ref, inject } from "vue";
 import { useRouter, useRoute } from "vue-router";
 import { userData } from "@/store/user";

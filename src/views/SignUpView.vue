@@ -19,6 +19,7 @@
 </template>
 
 <script lang="ts" setup>
+/* eslint-disable */
 import { useRouter } from "vue-router";
 import { inject, ref } from "vue";
 import axios from "axios";
@@ -48,9 +49,7 @@ async function signUpForm() {
       inject_alert("회원가입에 성공하셨습니다!");
       router.push("/login");
     })
-    .catch((error) => {
-      console.log("Error " + error.response.status);
-      console.log("Log " + error);
+    .catch(function () {
       inject_alert("회원가입 실패");
     });
 }

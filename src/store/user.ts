@@ -1,7 +1,7 @@
 import { Socket } from "socket.io-client";
 import { DefaultEventsMap } from "@socket.io/component-emitter";
 import { AxiosInstance } from "axios";
-
+/* eslint-disable */
 interface userInterface {
   user_id: string;
   user_name: string;

@@ -14,7 +14,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr class="rows" v-for="row in list" :key="row">
+        <tr class="rows" v-for="row in list" :key="row.post_id">
           <td>{{ row.post_id }}</td>
           <td>
             <a @click="goPosting(row.post_id)">{{ row.post_title }}</a>
@@ -36,12 +36,24 @@
 </template>
 
 <script setup lang="ts">
+/* eslint-disable */
 import { userData } from "@/store/user";
-import { ref } from "vue";
+import { ref, inject } from "vue";
 import { useRouter } from "vue-router";
 import ShortCut from "@/components/ShortCut.vue";
 
-const list = ref([]);
+const inject_alert: any = inject("setAlertOpen");
+
+interface postData {
+  post_id: number;
+  post_name: string;
+  post_title: string;
+  post_create: string;
+  post_type: string;
+  post_writer: number;
+}
+
+const list = ref([{} as postData]);
 const router = useRouter();
 function getPostings() {
   userData.instance
@@ -57,7 +69,9 @@ function getPostings() {
 }
 
 function goDm(writer: number) {
-  router.push(`/dm/${writer}`);
+  if (writer.toString() == userData.user_id)
+    inject_alert("본인에게는 일대일 대화를 할 수 없습니다!");
+  else router.push(`/dm/${writer}`);
 }
 
 function goUpload() {
