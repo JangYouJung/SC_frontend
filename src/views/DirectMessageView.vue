@@ -117,7 +117,7 @@ function getBeforeData() {
 async function scrollDown() {
   await nextTick();
   element.value = document.querySelector(".msgBox") as HTMLInputElement;
-  (element.value as HTMLElement).scrollTo({
+  (element.value as HTMLElement)?.scrollTo({
     top: element.value.scrollHeight,
     behavior: "smooth",
   });
