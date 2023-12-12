@@ -32,7 +32,8 @@ async function loginCheck() {
 function socketConnect() {
   const s_client = io("http://sc-chatting.ddns.net", {
     path: "/socket.io", // 서버 path와 일치시켜준다
-    // transports: ['websocket']
+    transports: ['websocket'],
+    upgrade: false
   });
 
   // 연결 성공 시 이벤트 핸들러
