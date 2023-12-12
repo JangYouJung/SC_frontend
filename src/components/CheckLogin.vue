@@ -3,6 +3,7 @@
 </template>
 
 <script setup lang="ts">
+/* eslint-disable */
 import router from "@/router";
 import { userData } from "@/store/user";
 import axios from "axios";

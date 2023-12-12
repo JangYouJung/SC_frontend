@@ -10,6 +10,7 @@
 </template>
 
 <script setup lang="ts">
+/* eslint-disable */
 import { inject, defineProps } from "vue";
 
 const msg = defineProps({

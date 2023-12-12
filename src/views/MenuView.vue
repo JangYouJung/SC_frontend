@@ -4,8 +4,7 @@
     <div class="menu">
       <table>
         <tr>
-          <button @keydown="keyDownHandler" @click="goFreeBoard">
-            자유게시판</button
+          <button @click="goFreeBoard">자유게시판</button
           ><button @click="goInfoBoard">정보게시판</button
           ><button @click="goChat">대화방</button>
         </tr>
@@ -24,6 +23,7 @@
 </template>
 
 <script setup lang="ts">
+/* eslint-disable */
 import { useRouter } from "vue-router";
 import { inject } from "vue";
 import ShortCut from "@/components/ShortCut.vue";

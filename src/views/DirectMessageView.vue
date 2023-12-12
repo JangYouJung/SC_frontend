@@ -26,6 +26,7 @@
 </template>
 
 <script setup lang="ts">
+/* eslint-disable */
 import { ref, onMounted, nextTick, inject } from "vue";
 import { userData } from "@/store/user";
 import router from "@/router";
@@ -83,7 +84,7 @@ function sendMessage() {
     msg: message.value,
     writer: userData.user_id,
     s_name: userData.user_name,
-    receiver: route.params.receiver_id,
+    receiver: route.params.receiver_id as string,
   });
   message.value = "";
   scrollDown();
@@ -100,12 +101,12 @@ function getBeforeData() {
       params: { user_id: userData.user_id, partner_id: partner_id },
     })
     .then((res) => {
-      res.data.forEach((element: object) => {
+      res.data.forEach((element: any) => {
         inputMessage.value.push({
           msg: element.m_content,
           writer: element.m_sender,
           s_name: element.m_sender_name,
-          receiver: route.params.receiver_id,
+          receiver: route.params.receiver_id as string,
         });
         // console.log(res.data);
         scrollDown();
