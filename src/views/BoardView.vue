@@ -62,7 +62,7 @@ interface postData {
 const data = ref({} as postData);
 function getPostings() {
   userData.instance
-    .get(`http://sc-chatting.ddns.net/api/board`, {
+    .get(`http://sc-chatting.com/api/board`, {
       params: { id: route.params.id },
     })
     .then(function (res) {
@@ -76,7 +76,7 @@ function getPostings() {
 function deletePost() {
   if (data.value.post_writer == userData.user_id) {
     userData.instance
-      .delete(`http://sc-chatting.ddns.net/api/board`, {
+      .delete(`http://sc-chatting.com/api/board`, {
         params: { id: route.params.id },
       })
       .then(() => {

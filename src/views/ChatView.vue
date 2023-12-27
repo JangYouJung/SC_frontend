@@ -83,7 +83,7 @@ function goBack() {
 
 function getBeforeData() {
   userData.instance
-    .get("http://sc-chatting.ddns.net/api/chat/getMessages")
+    .get("http://sc-chatting.com/api/chat/getMessages")
     .then((res) => {
       res.data.forEach((element: any) => {
         inputMessage.value.push({
